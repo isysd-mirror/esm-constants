@@ -1,0 +1,33 @@
+{
+  "name": "esm-constants",
+  "version": "0.2.0",
+  "description": "Constants from nodejs for isomorphic execution.",
+  "main": "constants.node.js",
+  "module": "constants.js",
+  "scripts": {
+    "test": "iso-test ./test.js",
+    "preinstall": "gpm -n .. -t .. -u https -d 1 -i .",
+    "postinstall": "node -e \"try { require('../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', 'esm')})}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isysd-mirror/esm-constants.git"
+  },
+  "keywords": [
+    "isomorphic",
+    "guld",
+    "runtime",
+    "constants"
+  ],
+  "author": "isysd",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "../esm"
+  },
+  "peerDependencies": {
+    "gpm": "https://github.com/IonicaBizau/gpm.git"
+  },
+  "devDependencies": {
+    "iso-test": "../iso-test"
+  }
+}
